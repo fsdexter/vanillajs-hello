@@ -3,6 +3,9 @@ window.onload = function() {
     document.querySelector("#excuse").innerHTML = newExcuse();
   });
 };
+
+let getRandomElement = arr => arr[Math.floor(Math.random() * arr.length)];
+
 let newExcuse = () => {
   let who = ["the dog", "my granma", "his turtle", "my bird"];
   let what = ["eat", "pissed", "crushed", "broked"];
@@ -14,9 +17,11 @@ let newExcuse = () => {
     "while I was praying"
   ];
 
-  var rdmvaleu1 = Math.floor(Math.random() * who.length);
-  var rdmvaleu2 = Math.floor(Math.random() * what.length);
-  var rdmvaleu3 = Math.floor(Math.random() * when.length);
-
-  return who[rdmvaleu1] + " " + what[rdmvaleu2] + " " + when[rdmvaleu3];
+  return (
+    getRandomElement(who) +
+    " " +
+    getRandomElement(what) +
+    " " +
+    getRandomElement(when)
+  );
 };
